@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Últimos Movimientos - Alke Wallet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h2>Últimos Movimientos</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Tipo</th>
+      <th>Cantidad</th>
+      <th>Fecha</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="transaction : ${transactions}">
+      <td th:text="${transaction.type}"></td>
+      <td th:text="${transaction.amount}"></td>
+      <td th:text="${transaction.date}"></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

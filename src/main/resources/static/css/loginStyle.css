@@ -1,0 +1,35 @@
+/* Styles for the login container */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-height: 100vh;
+}
+
+/* Styles for the wallet image column */
+.wallet-image {
+    flex: 1;
+    background: url("/assets/img/ALKE%20WALLET.JPEG") no-repeat center center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+/* Styles for the login form box */
+.login-box {
+    padding: 25px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+/* Styles for the login title */
+.login-title {
+    margin-bottom: 20px;
+}
+
+/* Base style for rows for a flex container */
+.row {
+    display: flex;
+    flex-grow: 1;
+}

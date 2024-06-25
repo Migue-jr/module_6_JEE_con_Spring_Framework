@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alke Wallet - Menú Principal</title>
+  <!-- Bootstrap CSS para estilos básicos y responsividad -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <!-- CSS personalizado para el menú principal -->
+  <link rel="stylesheet" href="/css/menuStyle.css">
+</head>
+<body>
+<div class="container">
+  <!-- Estructura principal de la página -->
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Tarjeta para encapsular el contenido del menú principal -->
+      <div class="card">
+        <!-- Encabezado de la tarjeta con el título del menú -->
+        <div class="card-header">
+          Menú Principal
+        </div>
+        <!-- Cuerpo de la tarjeta con las opciones del menú -->
+        <div class="card-body">
+          <!-- Lista de opciones: enlaces -->
+          <ul class="list-group">
+            <a href="/deposit" class="list-group-item" id="deposit-link">Depositar Dinero</a>
+            <a href="/sendMoney" class="list-group-item" id="sendMoney-link">Enviar Dinero</a>
+            <a href="/transactions" class="list-group-item" id="transactions-link">Ver Últimos Movimientos</a>
+            <a href="/login" class="list-group-item">Cerrar Sesión</a>
+          </ul>
+        </div>
+        <!-- Otra sección del encabezado de la tarjeta para mostrar el saldo actual -->
+        <div class="card-header">
+          Dinero en cuenta:
+          <h3 id="saldo-actual" th:text="${balance}">$0.00</h3> <!-- Elemento para mostrar el saldo actual -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery y Bootstrap Bundle con Popper para funcionalidades de JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- custom JavaScript file -->
+<script src="/js/menu.js"></script>
+</body>
+</html>

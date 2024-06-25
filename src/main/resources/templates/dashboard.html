@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<h1>Dashboard Alke Wallet</h1>
+<div>
+  <p>Bienvenido, <span th:text="${user.username}"></span></p>
+  <p>Balance: <span th:text="${user.balance}"></span></p>
+</div>
+<div th:if="${error}" class="error">
+  <p th:text="${error}"></p>
+</div>
+<form th:action="@{/deposit}" method="post">
+  <div>
+    <label>Monto:</label>
+    <input type="number" step="0.01" name="amount" required />
+  </div>
+  <div>
+    <button type="submit">Depositar</button>
+  </div>
+</form>
+<form th:action="@{/withdraw}" method="post">
+  <div>
+    <label>Monto:</label>
+    <input type="number" step="0.01" name="amount" required />
+  </div>
+  <div>
+    <button type="submit">Retirar</button>
+  </div>
+</form>
+<form th:action="@{/transfer}" method="post">
+  <div>
+    <label>Destinatario:</label>
+    <input type="text" name="recipientUsername" required />
+  </div>
+  <div>
+    <label>Monto:</label>
+    <input type="number" step="0.01" name="amount" required />
+  </div>
+  <div>
+    <button type="submit">Transfer</button>
+  </div>
+</form>
+<h2>Transactions</h2>
+<table>
+  <thead>
+  <tr>
+    <th>Type</th>
+    <th>Amount</th>
+    <th>Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="transaction : ${transactions}">
+    <td th:text="${transaction.type}"></td>
+    <td th:text="${transaction.amount}"></td>
+    <td th:text="${transaction.date}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

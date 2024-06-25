@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviar Dinero - Alke Wallet</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h2>Enviar Dinero</h2>
+  <form th:action="@{/sendMoney}" method="post">
+    <div class="mb-3">
+      <label for="recipientUsername" class="form-label">Destinatario</label>
+      <input type="text" class="form-control" id="recipientUsername" name="recipientUsername" required>
+    </div>
+    <div class="mb-3">
+      <label for="amount" class="form-label">Cantidad</label>
+      <input type="number" class="form-control" id="amount" name="amount" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </form>
+  <div th:if="${error}">
+    <p th:text="${error}" class="text-danger"></p>
+  </div>
+</div>
+</body>
+</html>
